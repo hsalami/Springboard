@@ -1,1 +1,1 @@
-This folder contains the python notebook for the Spark mini-project. The mini-project focuses on working with Spark Datasets & Dataframes, some Spark SQL, and building a couple of binary classifiaction models using Spark ML (with some MLlib too).
+This folder contains the python notebook for the Spark mini-project. The mini-project focuses on working with Spark Datasets & Dataframes, some Spark SQL, and building a couple of binary classification models using Spark ML (with some MLlib too).
