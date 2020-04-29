@@ -220,32 +220,32 @@ We start with training the data, using our defined nested cross-validation funct
                                   Averages of cross-validation Accuracies 
      Low Violation:
                                                      
-| Models||                    One Hot Encoding - MSE |  R2  || Label Encoding - MSE| R2
-|------||----------------------------------------------|---------- ||----|--------                             
-|Linear SVR ||                                 8.045280|  0.008385||7.814561 | 0.036509
-|Random Forest Regressor||                     5.836208|  0.281117||5.896790 | 0.273740
-|AdaBoost Regressor   ||                       9.030906| -0.112146||8.236327 |-0.015791
-|Gradient Boosting Regressor ||                5.843191|  0.280142||5.834430 | 0.281412
+| Models|                      One Hot Encoding - MSE |  R2       | Label Encoding - MSE| R2|
+|------|----------------------------------------------|---------- |---------------------|---|                             
+|Linear SVR |                                8.045280|  0.008385 |7.814561 | 0.036509|
+|Random Forest Regressor|                    5.836208|  0.281117 |5.896790 | 0.273740|
+|AdaBoost Regressor   |                       9.030906| -0.112146 |8.236327 |-0.015791|
+|Gradient Boosting Regressor |                5.843191|  0.280142 |5.834430 | 0.281412|
 
 
      Medium Violation:
                                                      
-| Models||                      One Hot Encoding - MSE |    R2  || Label Encoding -  MSE|  R2
-|------||----------------------------------------------|---------- ||----|--------                             
-|Linear SVR ||                                 1.458459|  0.004655||1.369467|  0.065405
-|Random Forest Regressor||                     1.246249|  0.149597||1.259151 | 0.140800
-|AdaBoost Regressor   ||                       2.503747| -0.708556||2.270310 |-0.549595
-|Gradient Boosting Regressor ||                1.243516|  0.151465||1.246730  |0.149238
+| Models|                      One Hot Encoding - MSE |    R2  | Label Encoding -  MSE|  R2|
+|------|----------------------------------------------|---------- |----|-------- |                            
+|Linear SVR |                                1.458459|  0.004655|1.369467|  0.065405|
+|Random Forest Regressor|                    1.246249|  0.149597|1.259151 | 0.140800|
+|AdaBoost Regressor   |                     2.503747| -0.708556|2.270310 |-0.549595|
+|Gradient Boosting Regressor |               1.243516|  0.151465|1.246730  |0.149238|
 
 
     High Violation:
                                                      
-| Models||                     One Hot Encoding -  MSE |    R2  || Label Encoding - MSE| R2
-|------||----------------------------------------------|---------- ||----|--------                             
-|Linear SVR ||                                 0.807403|  0.024286||0.817994|  0.010179
-|Random Forest Regressor||                     0.731271|  0.112643||0.742043|  0.099861
-|AdaBoost Regressor   ||                       1.822915| -1.213779||1.476398| -0.788061
-|Gradient Boosting Regressor ||                0.690629 | 0.162729||0.699775 | 0.151502
+| Models|                     One Hot Encoding -  MSE |    R2  | Label Encoding - MSE| R2|
+|------|----------------------------------------------|---------- |----|--------  |                           
+|Linear SVR |                                 0.807403|  0.024286|0.817994|  0.010179|
+|Random Forest Regressor|                     0.731271|  0.112643|0.742043|  0.099861|
+|AdaBoost Regressor   |                       1.822915| -1.213779|1.476398| -0.788061|
+|Gradient Boosting Regressor |                0.690629 | 0.162729|0.699775 | 0.151502|
 
 
 One Hot Encoding: For low and high violations, we see that Gradient boosting regressor and random forest have  better performance (in terms of lower MSE) than the other two models. With high violations, gradient boosting regressor showed the lowest MSE. 
