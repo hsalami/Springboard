@@ -69,7 +69,7 @@ During each inspection of a given restaurant, all detected violations are classi
 
 *How many low, medium and high violations occur per Inspection?* To check how large each number of violation can be per inspection, we examine their distribution by plotting the box plot of each.
 
-<img src='plot1.png'>
+<img src='image/plot1.png'>
 
 We see that the number of low violation per inspection is more spread out than that of medium and high violations. Also, the number of low violations found in an inspection can be larger than that of medium and high violations. We also notice that more than 50% of the number of high violations is zero, which means that they are less common than the other two types of violations. If we compute their non-zero percentage, 87% of low violations are non-zero, 53% of medium violations are non-zero and 40% of low violations are non-zero.
 
@@ -77,7 +77,7 @@ We see that the number of low violation per inspection is more spread out than t
 *How are violations changing over time?*
 Let us now check the evolution of the number of each violation type with time, to see if there is an increase or decrease in their occurrence. We count the average number of each type of violation for each month across the years, and we plot the evolution of the average number of violations.
 
-<img src='plot2.png'>
+<img src='image/plot2.png'>
 
 We see that on average the number of each type of violations is not decreasing with time, which implies the importance of doing regular inspections for the food facilities and restaurants.
 
@@ -88,45 +88,45 @@ We now explore some of the features of the restaurants and check for any associa
 #### Some Visualizations
 **Place Description:** The column 'description' provides a brief description of the facility inspected. More specifically, it specifies whether the inspected place is a restaurant, supermarket or convenience store, and whether it belongs to a chain and if it provides liquor. The plot below shows, for each type of place, the average and maximum number of each violation type detected per inspection. 
 
-<img src='plot3.png'>
+<img src='image/plot3.png'>
 
 In the above plots, the less clean food facilities appear in the upper right corner of the plot and the cleaner facilities appear in the lower left corner of the plot. We notice that for all violation types, the high numbers of violations are mainly detected in restaurants. On the other hand, cleaner places are those that provide child food or packaged foods or those that are inside a school or a warehouse. 
 
 **Restaurant Age:** For each restaurant, the business starting date is given in the violation dataset. From this column, we can find the age of the restaurant on the inspection day. Let us check if the fact that the restaurant is new or old can help in predicting the violation type. We plot the number of each violation type with respect to the age of the restaurant (in years).
 
-<img src='age.png'>
+<img src='image/age.png'>
 
 We mainly notice that in very old restaurants (> 60 years), the numbers of medium and high violations detected were small numbers. Since the total number of old restaurants is much less than the number of non-old restaurants (<40 years), a larger range of violation numbers was detected in non-old restaurants. However, for restaurants with less than 40 years old, we see all range of violations numbers are possible.
 
 **Price Range:** Yelp provides the price range for some restaurants. It is interesting now to check if expensive restaurants makes less violations or not. We now plot the distribution of each violation for each price range.
 
-<img src='price.png' >
+<img src='image/price.png' >
 
 There is no much difference observed between the ditributions of violation numbers for each price range. What is interesting to note is that expensive restaurants with more than 3 dollars sign do make violations of all types, their range of violation numbers is as spread out as the other restaurants categories.
 
 **Ambience:** Each restaurant is characterized by a specific ambience. The plot below shows, for each type of ambience, the average and maximum number of each violation type detected per inspection.
 
-<img src='ambience.png'>
+<img src='image/ambience.png'>
 
 We notice that 'touristy' restaurants have the highest averages of low and medium violations. On the other hand, the maximum number of low, medium and high violations were detected in 'casual' restaurants.
 
 **Cuisine:** Do certain cuisines make restaurants more prone to make violations in food handling? Let us check the number of violations for each cuisine type. We find the mean and maximum number of violations that occurred in each type of cuisine and we plot the results for each type of violation.
 
-<img src='cuisine.png'>
+<img src='image/cuisine.png'>
 
 We mainly see that for any type of violation, the following two cuisines: Japanese and Chinese have both high average number of violations and maximum number of violations. We also have the Southern cuisine for low violations
 
 **Special Food:** Each restaurant might be specialized in some type of food: pizza, fast food, sushi, etc.,... If a restaurant serves some  type of food, can this specialization make the restaurant more likely to make a violation?
 
-<img src='food.png'>
+<img src='imae/food.png'>
 
 We see that for low and high violations, places that serve Sushi and Seafood have the largest average number of violations or the largest maximum number of violations. Sushi and Seafood places involve raw fish, whose wrong handling make the restaurants more prone to make violations. On the other hand, for medium violations, we have places that serve Kosher with the highest average violation number.
 
 **Zip Codes:** We now look at the distribution of each type of violations on the map of zip codes of Allegheny County. This can help us identify if there is any neighborhood where low, medium or high violations mostly occur. We plot the choropleth map for each type of violation.
 
-<img align="left" width="400" title="Low"  src="ziplow.png" />
-<img align="left" width="400" title="Medium" src="zipmed.png" />
-<img align="center" width="400"  title="High" src="ziphigh.png"/>
+<img align="left" width="400" title="Low"  src="image/ziplow.png" />
+<img align="left" width="400" title="Medium" src="image/zipmed.png" />
+<img align="center" width="400"  title="High" src="image/ziphigh.png"/>
 
 We notice that for the zipcode corresponding to the city of Pittsburgh, low violations were mostly concentrated, however for the same city, medium and high violations were less than those of other cities. Moreover, medium and high violations were more concentrated in the central north parts of Allegheny county and a place in the central south part. It would be interesting to check the economical and social conditions of each of these neighborhoods and link them to the type of violations observed.
 
@@ -134,7 +134,7 @@ We notice that for the zipcode corresponding to the city of Pittsburgh, low viol
 
 We visualized so far the number of low, medium and high violations with respect to some features of the inspected places. Some additional plots can be found [here](https://github.com/hsalami/Springboard/blob/master/Capstone%20Project%202/Data%20Story/Data%20Story.ipynb). In general, apart from the insights that we previously mentioned, the association between the various characteristics of the inspected places and the the number of each type of violation seems to be weak. In this section, we statistically examine the association between each categorical feature and each violation type, especially that there are other features with high cardinality that we did not yet explore. We choose to compute the mutual information between each categorical feature and the number of each type of violation (using mutual_info_regression from sklearn library). "Mutual information (MI) between two random variables is a non-negative value, which measures the dependency between the variables. It is equal to zero if and only if two random variables are independent, and higher values mean higher dependency."
 
-<img src='mi.png'>
+<img src='image/mi.png'>
 
 For all type of violation, we see how the weak association between each feature and the number of violation is translated by low level values of mutual information. We notice that the largest values of mutual information correspond to the location features (municipal and zip), time feature (year) and description column. For the remaining columns that specify the cuisine, any special food and place characteristic, the mutual information values showed also to be small. More details can be found [here](https://github.com/hsalami/Springboard/blob/master/Capstone%20Project%202/Data%20Story/Data%20Story.ipynb). 
 
@@ -149,7 +149,7 @@ We list here the added columns:
 
 To examine the association between the number of each type of violation and these numerical columns, we compute the Spearman's correlation between them. The Spearman's correlation is a measure that varies between -1 and +1 with 0 implying no correlation and it accounts for non-linear relationship.
 
-<img src="corr.png">
+<img src="image/corr.png">
 
 We observe the following:
 - For low violation, the strongest positive correlation is shown to be with its own past statistics: max_low and std_low, as well as with the number of days passed since last inspection. The strongest negative correlation is shown to be with the log ratio of past medium and high violations;
@@ -165,7 +165,7 @@ The last piece of information available in our data that we now examine is the Y
 
 **Sentiment Analysis**: To perform sentiment analysis on the text reviews, we use afinn library to compute a sentiment score for each text review. We then compute the rolling statistics of the sentiment scores to add them as additional columns to the data. For each inspection, we focus on the sentiment scores of all reviews mentioned before the inspection date and find their mean, maximum, minimum, and standard deviation statistics. For each inspection, we also add the total number of reviews and the average number of stars given to the restaurant before the inspection date.
 
-<img src="sentiment.png">
+<img src="image/sentiment.png">
 
 We notice that the statistics of the sentiment scores did not show strong association with the type of violation detected except for the minimum sentiment score that showed the strongest negative correlation with the number of high violations. Moreover, the total number of reviews (counts) as well the minimum number of stars given to restaurants showed stronger association with the number of violations than the other measures. 
 
@@ -183,7 +183,7 @@ We notice that the statistics of the sentiment scores did not show strong associ
 
 Let us check the how the vector of topics of each inspection correlate with low, medium and high violations.
 
-<img src="tpc.png">
+<img src="image/tpc.png">
 
 Topic V4 shows the lowest negative correlation with each type of violation. The main words that constitute topic V4 are: coffee, shop and store. This might mean that the inspected place corresponds to a coffee shop or it is a place for shopping, more than it is a restaurant. High violation has its most significant positive correlation with topic V3, which seems to be related to the service provided by the place. Topic V5 which includes the words: chinese and suhi roll has greater correlation with each type of violation than topics V1 and V2.
 
@@ -335,13 +335,13 @@ After having chosen the combination of label encoding and gradient boosting clas
     
 The accuracy is 67.65%, which is expected (the score is close to the ones we obtained when we have used cross validation on the training set). Let us look at the feature importances provided by the final model. We plot the features importance of the top 10 features.
 
-<img src="RF.png">
+<img src="image/RF.png">
 
 We see that the most important feature is "days_between" which specifies the number of days that are between two consecutive inspections. We also notice that the month of the inspection is another important feature, which suggests the presence of some seasonal impacts that affect the restaurant performance. Moreover, past violations in terms of maximum number of high violations so far detected and the last number of high violations detected at a given restaurant are in the top 10 features, which suggests the importance of historical performance of restaurants. The topics modeled from the reviews (V3 and V4) also contributed to the performance of the final model. The feature "Restaurants" specifies if the inspected place is a restaurant or another type of food facility, this indicator represents also an important feature as we have already noticed from visualizing our data.
 
 To check how the model is performing in predicting the true and negative labels, we plot the confusion matrix and compute the precision and recall scores for each class.
 
-<img src="conf.png">
+<img src="image/conf.png">
 
                                         Class: 1 (Fail)         Class: 0 (Pass)
                                         Precision: 0.67         Precision: 0.68
